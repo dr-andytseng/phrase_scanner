@@ -18,8 +18,6 @@ from datetime import datetime
 import sys
 import os
 from collections import deque
-import threading
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import warnings
 
 # Filter out the BeautifulSoup XML warning
@@ -28,7 +26,7 @@ warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 class PhraseScanner:
     def __init__(self, urls_file='urls.txt', phrases_file='phrases.txt', delay=1, max_pages_per_site=400, max_depth=10):
         """
-        Initialize the PhraseScanner.
+        Initialize the enhanced scanner.
         
         Args:
             urls_file (str): Path to file containing URLs to scan
@@ -382,7 +380,7 @@ class PhraseScanner:
     
     def scan_all_websites(self):
         """Main method to scan all websites."""
-        print(f"🚀 Starting phrase scan of {len(self.base_urls)} websites")
+        print(f"🚀 Starting enhanced scan of {len(self.base_urls)} websites")
         print(f"📋 Phrases: {', '.join(self.phrases[:10])}{'...' if len(self.phrases) > 10 else ''}")
         print("=" * 80)
         
@@ -469,7 +467,7 @@ class PhraseScanner:
                 phrase_stats[phrase]['total_occurrences'] += count
         
         print("\n" + "=" * 80)
-        print("📈 PhraseScanner Summary")
+        print("📈 ENHANCED SCAN SUMMARY")
         print("=" * 80)
         print(f"🌐 Total websites: {len(self.base_urls)}")
         print(f"📄 Total pages scanned: {len(self.results)}")
@@ -504,7 +502,7 @@ def create_sample_files():
     # Create sample URLs file
     if not os.path.exists('urls.txt'):
         sample_urls = [
-            "# Example websites — edit this file with your own URLs. Lines starting with # are ignored.",
+            "# These are example websites to scan, please edit urls.txt with your chosen websites.",
             "https://www.python.org",
             "https://realpython.com",
             "https://docs.python.org/3/"
@@ -517,7 +515,7 @@ def create_sample_files():
     # Create sample phrases file
     if not os.path.exists('phrases.txt'):
         sample_phrases = [
-            "# Example phrases — edit this file with your own phrases. Lines starting with # are ignored.",
+            "# These are example phrases, please edit phrases.txt with your own phrases.",
             "python",
             "programming",
             "development",
@@ -534,7 +532,7 @@ def create_sample_files():
 
 
 def main():
-    """Main function to run the PhraseScanner."""
+    """Main function to run the enhanced scanner."""
     print("🔍 PhraseScanner")
     print("=" * 50)
     
@@ -560,7 +558,7 @@ def main():
         print(f"🔧 Debug - Config Values: MAX_PAGES_PER_SITE={MAX_PAGES_PER_SITE}, MAX_CRAWL_DEPTH={MAX_CRAWL_DEPTH}")
         print(f"🔧 Debug - Scanner Values: max_pages_per_site={scanner.max_pages_per_site}, max_depth={scanner.max_depth}")
         
-        # Run the PhraseScanner
+        # Run the enhanced scan
         scanner.scan_all_websites()
         
         # Save results
