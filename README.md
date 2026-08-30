@@ -40,19 +40,21 @@ Edit urls.txt — one URL per line, lines starting with # are ignored.
 Note: Each URL is a starting point, not a single page. The script crawls outward from it, following internal links within the same domain, up to MAX_CRAWL_DEPTH link-hops and MAX_PAGES_PER_SITE pages. It will never cross onto external domains, even if it encounters outbound links to them.
 
 Example urls.txt:
+```
 https://example.com
 https://blog.example.com
-
+```
 ### 2. Configure your phrases
 
 Edit phrases.txt — one term per line, single words or multi-word phrases both work.
 
 Example phrases.txt:
+```
 privacy policy
 data breach
 subscription
 free trial
-
+```
 ### 3. Run the scanner
 
 python phrase_scanner.py
