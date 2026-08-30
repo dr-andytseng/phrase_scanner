@@ -1,0 +1,9 @@
+urls.txt
+phrases.txt
+phrasescanner_results_CSV.csv
+phrasescanner_results_JSON.json
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
