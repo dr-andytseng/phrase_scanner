@@ -87,15 +87,19 @@ These three settings control both how thorough the scan is and how long it takes
 ### Tuning for speed vs. thoroughness
 
 If you want a faster, lighter scan (e.g. checking a small marketing site, or doing a quick spot-check):
+```
 DELAY_BETWEEN_REQUESTS = 0.2
 MAX_PAGES_PER_SITE = 100
 MAX_CRAWL_DEPTH = 3
+```
 This is a good default for scanning a single landing page, blog, or small docs site where you don't need to crawl the entire domain.
 
 If you want a deep, exhaustive scan (e.g. a full compliance audit of a large site):
+```
 DELAY_BETWEEN_REQUESTS = 1.0
 MAX_PAGES_PER_SITE = 10000
 MAX_CRAWL_DEPTH = 8
+```
 Expect this to take considerably longer — run it in the background or overnight for large domains.
 
 General guidance: lower MAX_CRAWL_DEPTH first if you just want to check top-level and near-top-level pages, since depth has an exponential effect on pages discovered. Lower MAX_PAGES_PER_SITE as a hard ceiling/safety net regardless of depth, especially on sites you don't control. Only lower DELAY_BETWEEN_REQUESTS if you're scanning a site you own or have permission to hit harder, since reducing delay increases server load per unit time.
