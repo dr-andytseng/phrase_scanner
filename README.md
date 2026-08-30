@@ -18,8 +18,7 @@ Useful for content audits, SEO tracking, compliance checks, competitive research
 ## Requirements
 
 - Python 3.7+
-- Dependencies: pip install requests beautifulsoup4
-- Optional but recommended for XML parsing: pip install lxml
+- Dependencies are listed in requirements.txt (requests, beautifulsoup4, lxml)
 
 ## Setup
 
@@ -27,7 +26,7 @@ Useful for content audits, SEO tracking, compliance checks, competitive research
    git clone https://github.com/yourusername/phrase-scanner.git
    cd phrase-scanner
 2. Install dependencies:
-   pip install requests beautifulsoup4 lxml
+   pip install -r requirements.txt
 3. Run the script once to auto-generate sample input files:
    python phrase_scanner.py
    This creates urls.txt and phrases.txt if they don't already exist.
@@ -108,6 +107,10 @@ Both CSV and JSON outputs include, per page: URL, number of phrases found, list 
 - This is a same-domain crawler — it won't follow external links.
 - Respects robots.txt by default; it will skip disallowed pages.
 - Large sites with high MAX_PAGES_PER_SITE values can take a long time to run — adjust DELAY_BETWEEN_REQUESTS and depth/page limits accordingly.
+
+## Legal & Ethical Use
+
+This tool is intended for scanning websites you own or have explicit permission to crawl. Before scanning any third-party site, review its Terms of Service and robots.txt, since some sites explicitly prohibit automated crawling regardless of what robots.txt allows. Aggressive crawl settings (high MAX_PAGES_PER_SITE, low DELAY_BETWEEN_REQUESTS) can place meaningful load on a target server — use conservative settings on any site you don't control. You are responsible for how you use this tool and for complying with applicable laws and site policies in your jurisdiction.
 
 ## License
 
