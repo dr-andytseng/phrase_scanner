@@ -23,7 +23,7 @@ Useful for content audits, SEO tracking, compliance checks, competitive research
 ## Setup
 
 1. Clone this repository:
-   git clone https://github.com/yourusername/phrase-scanner.git
+   git clone https://github.com/dr-andytseng/phrase-scanner.git
    cd phrase-scanner
 2. Install dependencies:
    pip install -r requirements.txt
