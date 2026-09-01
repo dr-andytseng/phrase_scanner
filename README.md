@@ -23,12 +23,20 @@ Useful for content audits, SEO tracking, compliance checks, competitive research
 ## Setup
 
 1. Clone this repository:
+```
    git clone https://github.com/dr-andytseng/phrase-scanner.git
    cd phrase-scanner
+```
+
 2. Install dependencies:
+```
    pip install -r requirements.txt
+```
+
 3. Run the script once to auto-generate sample input files:
+```
    python phrase_scanner.py
+```
    This creates urls.txt and phrases.txt if they don't already exist.
 
 ## Usage
@@ -44,6 +52,7 @@ Example urls.txt:
 https://example.com
 https://blog.example.com
 ```
+
 ### 2. Configure your phrases
 
 Edit phrases.txt — one term per line, single words or multi-word phrases both work.
@@ -55,9 +64,12 @@ data breach
 subscription
 free trial
 ```
+
 ### 3. Run the scanner
 
+```
 python phrase_scanner.py
+```
 
 The script will crawl each site, log progress in the terminal, and save results to:
 - phrasescanner_results_CSV.csv
